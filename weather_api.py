@@ -27,8 +27,12 @@ class WeatherInfo:
     def get_weather_info(self):
         if self.response is None:
             self.save_api_response()
+        print(self.response)
 
-        if self.response['cod'] != 404:
+        if self.response['cod'] != '404':
             return self.weather_symbol[self.response['weather'][0]['icon'][0:2]], self.response['main']['temp']
         else:
-            raise ConnectionError("Failed to load weather info")
+            raise ConnectionError(f"Erroneous details provided, please check :\n"
+                                  f"City Name : {self.city_name}\n"
+                                  f"API key   : {self.api_key}\n"
+                                  f"Units     : {self.units}")
