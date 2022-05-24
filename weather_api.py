@@ -15,7 +15,7 @@ class WeatherInfo:
             '09': '🌦',
             '10': '🌧',
             '11': '⛈',
-            '13': '🌨❄',
+            '13': '❄',
             '50': '🌫'
         }
         self.base_url = "http://api.openweathermap.org/data/2.5/weather?"
