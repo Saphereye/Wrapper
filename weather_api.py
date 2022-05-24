@@ -27,7 +27,7 @@ class WeatherInfo:
     def get_weather_info(self):
         if self.response is None:
             self.save_api_response()
-        print(self.response)
+        # print(self.response)
 
         if self.response['cod'] != '404':
             return self.weather_symbol[self.response['weather'][0]['icon'][0:2]], self.response['main']['temp']
